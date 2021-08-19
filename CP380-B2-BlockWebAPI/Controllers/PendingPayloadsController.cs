@@ -15,8 +15,8 @@ namespace CP380_B2_BlockWebAPI.Controllers
     public class PendingPayloadsController : ControllerBase
     {
         // TODO
-          private Pendingpayloads pendingpayload1;
-        public PendingPayloadsController(Pendingpayloads pendingpayloads)
+          private PendingPayloads pendingpayload1;
+        public PendingPayloadsController(PendingPayloads pendingpayloads)
         {
             pendingpayload1 = pendingpayloads;
         }
