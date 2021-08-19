@@ -30,7 +30,7 @@ namespace CP380_B2_BlockWebAPI.Controllers
             {
                 Hash = blk.Hash,
                 PreviousHash = blk.PreviousHash,
-                TimeStamp = blk.TimeStamp,
+                Timestamp = blk.TimeStamp,
                 
             })); 
         }
@@ -49,7 +49,7 @@ namespace CP380_B2_BlockWebAPI.Controllers
                     {
                         Hash = blk.Hash,
                         PreviousHash = blk.PreviousHash,
-                        TimeStamp = blk.TimeStamp
+                        Timestamp = blk.TimeStamp
                         
                     })
                     .First());
