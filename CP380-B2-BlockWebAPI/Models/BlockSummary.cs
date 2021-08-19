@@ -13,6 +13,7 @@ namespace CP380_B2_BlockWebAPI.Models
         public DateTime Timedate { get; set; }
         public string PreviousHash { get; set; }
         public string Hash { get; set; }
+        public DateTime Timestamp { get; set; }
     
 
     public BlockSummary(DateTime TimeStamp, string PreviousHash, string Hash)
