@@ -36,7 +36,7 @@ namespace CP380_B1_BlockList.Models
             //
             // TODO
             //
-            var inputString = $""; // TODO
+            var inputString = $"{TimeStamp.Date:yyyy-MM-dd hh:mm:ss tt}-{PreviousHash}-{Nonce}-{json}"; // TODO
 
             var inputBytes = Encoding.ASCII.GetBytes(inputString);
             var outputBytes = sha256.ComputeHash(inputBytes);
