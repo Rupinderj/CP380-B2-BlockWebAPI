@@ -12,7 +12,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.IO;
-
+using CP380_B1_BlockList.Models;
+using CP380_B2_BlockWebAPI.Models;
 namespace CP380_B2_BlockWebAPI
 {
     public class Startup
@@ -30,6 +31,8 @@ namespace CP380_B2_BlockWebAPI
             //
             // TODO:
             //  add singletons
+             services.AddSingleton<BlockList>();
+            services.AddSingleton<Pendingpayloads>();
             //  
             services.AddControllers();
             services.AddSwaggerGen(c =>
