@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace CP380_B2_BlockWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [Produces("application/json")]
     public class BlocksController : ControllerBase
     {
         // TODO
-         public BlockList lista;
+         private BlockList lista;
 
         public BlocksController(BlockList blockList)
         {
@@ -26,11 +26,11 @@ namespace CP380_B2_BlockWebAPI.Controllers
         [HttpGet("/blocks")]
         public IActionResult Get()
         {
-            return Ok(lista.Chain.Select(a => new BlockSummary()
+            return Ok(lista.Chain.Select(blk => new BlockSummary()
             {
-                Hash = a.Hash,
-                PreviousHash = a.PreviousHash,
-                TimeStamp = a.TimeStamp,
+                Hash = blk.Hash,
+                PreviousHash = blk.PreviousHash,
+                TimeStamp = blk.TimeStamp,
                 
             })); 
         }
@@ -45,21 +45,20 @@ namespace CP380_B2_BlockWebAPI.Controllers
             if (block != null && block.Count() > 0)
             {
                 return Ok(block
-                    .Select(block1 => new BlockSummary()
+                    .Select(blk => new BlockSummary()
                     {
-                        Hash = block1.Hash,
-                        PreviousHash = block1.PreviousHash,
-                        TimeStamp = block1.TimeStamp,
+                        Hash = blk.Hash,
+                        PreviousHash = blk.PreviousHash,
+                        TimeStamp = blk.TimeStamp
                         
-                    }
-                    )
+                    })
                     .First());
             }
 
             return null;
         }
 
-        [HttpGet("/ blocks /{hash ?}/payloads")]
+        [HttpGet("/ blocks /{hash ?}/Payloads")]
         public IActionResult GetBlockPayload(string Hash)
         {
             var block = lista.Chain
