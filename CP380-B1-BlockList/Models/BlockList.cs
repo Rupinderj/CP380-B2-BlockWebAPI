@@ -25,8 +25,8 @@ namespace CP380_B1_BlockList.Models
         public void AddBlock(Block block)
         {
             // TODO
-            int lenght = Chain[Chain.Count - 1];
-            block.PreviousHash = lenght.Hash;
+            int lenght = Chain.Count - 1;
+            block.PreviousHash = block.Hash;
             block.Mine(Difficulty);
             Chain.Add(block);
         }

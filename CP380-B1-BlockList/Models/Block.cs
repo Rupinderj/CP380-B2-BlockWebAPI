@@ -52,7 +52,7 @@ namespace CP380_B1_BlockList.Models
             {
                 Nonce++;
                 Hash = CalculateHash();
-                if(Hash.startingWith(startingWith))
+                if(Hash.StartsWith(startingWith))
                 {
                     break;
                 }
